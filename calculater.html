@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+           width: 100%;
+           height: 100vh;
+           background:whitesmoke;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative;
+        }
+        .calculater{
+            width: 330px;
+            height: 430px;
+            background:black;
+            border-radius: 10px;
+        }
+        #display{
+            width: 280px;
+            height: 60px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 30px;
+            text-align: right;
+            font-weight: 700;
+        }
+        .dis{
+            display: flex;
+            align-items: center;
+           justify-content: center;
+           margin: 30px auto;
+        }
+        .btn{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            
+        }
+        .btn button{
+            width: 65px;
+            height: 50px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .btn button:hover{
+            background: gray;
+            color: black;
+        }
+        .any p{
+            color: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+        }
+       .any span{
+        color: chocolate;
+       }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculater">
+          <div class="dis"><input type="text" id="display" readonly>
+           </div>
+           <div class="btn">
+            <div>
+            <button onclick="clearDisplay()">AC</button>
+            <button onclick="appendToDisplay('%')">%</button>
+            <button onclick="appendToDisplay('M+')">M+</button>
+            <button onclick="appendToDisplay('^')">$</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('/')">/</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('*')">*</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('-')">-</button>
+          </div>
+          <div>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()" style="background-color: rgb(15, 93, 237); ">=</button>
+            <button onclick="appendToDisplay('+')">+</button>
+          </div>
+        </div>
+        
+       <div class="any"><p> Please <span> CALCULATE </span> with me......</p></div> 
+        
+        </div>
+    </div>
+    <script>
+        function appendToDisplay(value) {
+            const display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            const display = document.getElementById("display");
+            display.value = "";
+        }
+
+        function calculate() {
+            const display = document.getElementById("display");
+            try {
+                const result = eval(display.value);
+                display.value = result;
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
