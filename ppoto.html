@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protofolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kalam', cursive;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: #d1d8e7;
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background: rgba(129, 136, 164, 0.733);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 750px;
+            z-index: 100;
+        }
+
+        .navbar,
+        .header {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .navbar a,
+        .header a {
+            text-decoration: none;
+            margin: 15px;
+            color: rgb(253, 254, 255);
+            transform: 0.3s;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .navbar a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+            color: aqua;
+        }
+
+        .header a:hover {
+            color: #0ef;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 500;
+            animation: slideRight 1s ease forwards;
+            animation-delay: 0.7s;
+        }
+
+        .navbar a i {
+            margin: 5px;
+            transition: all .9s ease;
+        }
+
+        .navbar a:hover {
+            color: rgb(5, 133, 245);
+        }
+
+        .home {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            color: antiquewhite;
+            padding: 70px 20% 0;
+            z-index: 100;
+        }
+
+        .home .ims {
+            width: 200px;
+
+        }
+
+        .ims img {
+            width: 500px;
+            margin-left: 170px;
+
+
+        }
+
+        .home-contant {
+            max-width: 660px;
+        }
+
+        .home-contant h3 {
+            color: rgb(5, 182, 188);
+            font-size: 30px;
+            font-weight: 700;
+            opacity: 0;
+            animation: slideButton 1s ease forwards;
+            animation-delay: 0.7s;
+        }
+
+        .home-contant h1 {
+            font-size: 55px;
+            font-weight: 700;
+            margin: -3px 0;
+            animation: slideRight 1s ease forwards;
+            animation-delay: 0.8s;
+            color: #05598d;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: aqua;
+        }
+
+        .home-contant p {
+            font-size: 20px;
+        }
+
+        .home-sci a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid #05598d;
+            font-size: 15px;
+            color: #05598d;
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition: .5s;
+            opacity: 0;
+            animation: slideLeft 0.8s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+
+        }
+
+        .home-sci a:hover {
+            background: rgb(250, 250, 253);
+            color: rgb(3, 143, 251);
+            box-shadow: 0 0 20px rgb(83, 15, 217);
+        }
+
+        .btn-box {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 15px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: .2s;
+        }
+
+        .btn-box:hover {
+            box-shadow: 0 0 5px rgb(126, 165, 165),
+                0 0 20px #0ef,
+                0 0 40px cyan,
+                0 0 60px #0ef, 0 0 150px #0ef;
+
+        }
+ .about {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-position: center;
+            gap: 20px;
+            float: right;
+            padding: 20px;
+        }
+
+        .imp img {
+            width: 700px;
+            margin-bottom: 100px;
+        }
+
+        .about-text {
+            margin-right: 100px;
+
+        }
+
+        .about-text h1 {
+            color: rgb(41, 73, 74);
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .about-text h1 span {
+            color: chocolate;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .about-text h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: royalblue;
+        }
+
+        .about-text p {
+            font-size: 25px;
+            font-weight: 500;
+
+        }
+
+        .about-text p span {
+            color: rgb(40, 105, 93);
+            font-weight: 800;
+        }
+       
+
+        .sub-title {
+            text-align: center;
+            color: rgb(238, 240, 249);
+            background: rgb(133, 123, 123);
+            padding: 20px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid gray;
+        }
+
+        .sub-title h1:hover {
+            color: aqua;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+        }
+
+        .container1 {
+            width: 600px;
+            height: 120vh;
+            background: rgb(189, 185, 185);
+            padding: 75px 90px;
+            margin-left: 120px;
+        }
+
+        .heading1 {
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 40px;
+
+        }
+
+        .bar {
+            font-size: 25px;
+        }
+
+        .radial-bars {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-left: 120px;
+
+        }
+
+        .path {
+            stroke-width: 8;
+            stroke: #0ef;
+            fill: transparent;
+            stroke-dasharray: 402;
+            stroke-dashoffset: 402;
+            stroke-linecap: round;
+            float: right;
+        }
+
+        .path-1 {
+            animation: animate-path1 1s 1s linear forwards
+        }
+
+        .path-2 {
+            animation: animate-path2 1s 1s linear forwards
+        }
+
+        .path-3 {
+            animation: animate-path3 1s 1s linear forwards
+        }
+
+        .radial-bars .percentage {
+            top: 60%;
+            right: 40%;
+            transform: translate(50%, 280%);
+            font-size: 25px;
+            font-weight: 600;
+            color: #0ef;
+            animation: showText 0.5s 1s linear forwards;
+        }
+
+        .radial-bars text {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            top: 50%;
+            left: 20%;
+            animation: showText 0.7s 1s linear forwards;
+            opacity: 0;
+            color: rgb(2, 35, 35);
+        }
+
+        @keyframes showText {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes animate-path1 {
+            100% {
+                stroke-dashoffset: 80;
+            }
+        }
+
+        @keyframes animate-path2 {
+            100% {
+                stroke-dashoffset: 130;
+            }
+        }
+
+        @keyframes animate-path3 {
+            100% {
+                stroke-dashoffset: 125;
+            }
+        }
+
+
+        @keyframes slideTop {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideButton {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        .contact {
+            width: 100%;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 3rem;
+            padding-left: 30px;
+            margin-top: 130px;
+            background: rgb(183, 190, 196);
+        }
+
+        .contact-text {
+            margin-left: 140px;
+        }
+
+        .contact-text h2 {
+            font-size: 90px;
+            line-height: 1;
+            text-align: left;
+        }
+
+        .contact-text h2 span {
+            color: rgb(67, 142, 227);
+            opacity: 0;
+            animation: slideButton 1s ease forwards;
+            animation-delay: 0.7s;
+        }
+
+        .contact-text h4 {
+            margin: 15px 0;
+            color: #10171b;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: #1197f8;
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .contact-list {
+            margin-bottom: 3rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 18px;
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .contact-list i {
+            display: inline-block;
+            color: #05598d;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all .48s ease;
+            margin-top: 20px;
+        }
+
+        .contact-list li i:hover {
+            transform: scale(1.01) translate(-5px);
+            color: #0ef;
+        }
+
+        .contact-icons i {
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid rgba(34, 123, 248, 0.998);
+            font-size: 20px;
+            color: rgba(8, 132, 255, 0.998);
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition: 0.5s ease;
+            gap: 2rem;
+            opacity: 0;
+            animation: slideLeft 1s ease forwards;
+            animation-delay: calc(.2s * var(--i));
+            border-radius: 50%;
+        }
+
+        .contact-icons i:hover {
+            background: rgba(17, 249, 249, 0.977);
+            color: rgb(18, 19, 19);
+            box-shadow: 0 0 20px rgba(5, 241, 241, 0.943), 0 0 10px rgb(74, 231, 243);
+        }
+
+        form {
+            position: relative;
+        }
+
+        .contact-form input,
+        form textarea {
+            border: none;
+            outline: none;
+            width: 90%;
+            padding: 18px;
+            background: #09a9ff;
+            color: #0a0d10;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            color: #000303;
+        }
+
+        form {
+            height: 200px;
+            width: 500px;
+            margin-bottom: 240px;
+            padding: 10px;
+            color: #000303;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 200px;
+        }
+
+        .send {
+            display: inline-block;
+            padding: 10px 50px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 1px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: slideTop 1s ease forwards;
+            animation-delay: 0.8s;
+            box-shadow: 0 0 5px rgb(138, 226, 232), 0 0 25px #0ef;
+
+            z-index: 100;
+        }
+
+        .send:hover {
+            box-shadow: 0 0 5px rgb(75, 248, 248),
+                0 0 10px rgb(74, 231, 243),
+                0 0 30px rgb(52, 242, 242),
+                0 0 50px #30e7f0, 0 0 100px rgb(48, 236, 249);
+        }
+
+        footer {
+            height: 80px;
+            background: rgba(129, 136, 164, 0.733);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(248, 250, 253);
+        }
+
+        .bar {
+            font-size: 25px;
+            padding: 20px;
+            margin: 10px auto;
+        }
+
+        .bar:first-child {
+            margin-top: 0;
+        }
+
+        .bar:last-child {
+            margin-bottom: 0;
+        }
+
+        .bar span {
+            color: #000303;
+            font-size: 18px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+            opacity: 0;
+            margin-bottom: 20px;
+        }
+
+        .Techinal-bars {
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            background: #737576;
+            padding: 40px;
+
+        }
+
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .skills__bar {
+            left: 0;
+            bottom: 0;
+            height: .25rem;
+            border-radius: .5rem;
+            z-index: 100;
+            animation: animate 5s cubic-bezier(1, 0, 0, 5, 1) linear forwards;
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .skills__html {
+            width: 95%;
+            background-color: #c95d2e;
+        }
+
+        .skills__css {
+            width: 85%;
+            background-color: #147bbc;
+        }
+
+        .skills__js {
+            width: 65%;
+            background-color: rgb(233, 233, 93);
+        }
+
+        .skills__jsr {
+            width: 30%;
+            background: #039595;
+        }
+
+        .skills__bt {
+            width: 80%;
+            background: #3d4181;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="" class="logo" id="logo">The Prakash's</a>
+        <nav class="navbar">
+            <a href="" style="--i:1" class="active"><i class="fa-solid fa-house fa-2xs"></i>Home</a>
+            <a href="#about" style="--i:2"><i class="fa-solid fa-user fa-2xs"></i>About</a>
+            <a href="#skills" style="--i:3"><i class="fa-solid fa-laptop fa-2xs"></i>Skill</a>
+            <a href="ppoto.html" style="--i:4"><i class="fa-solid fa-user fa-2xs"></i>Protofolio</a>
+            <a href="#contact" style="--i:5"><i class="fa-solid fa-phone fa-2xs"></i>Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-contant">
+            <h3>Hello, It`s me</h3>
+            <h1>PRAKASH SUTHAR</h1>
+            <h3>And I'm a fronted web Developer<span class="text"></span></h3>
+            <p></p>
+            <div class="home-sci">
+                <a href="#" style="--i:6"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="--i:7"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" style="--i:8"><i class="fa-brands fa-github"></i></a>
+                <a href="#" style="--i:9"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="#" class="btn-box">More About Me</a>
+        </div>
+        <div class="ims"><img src="pppp.png"></div>
+
+    </section>
+    <section1 class="about" id="about">
+        <div class="imp">
+            <img src="psuthar..png">
+        </div>
+        <div class="about-text">
+            <h1>About <span> Me</span> </h1>
+            <br>
+            <h4>Fronted Web Developer</h4>
+            <p>I am a skilled web developer and web designer.<br> I learned <span>HTML,CSS,JAVA SCRIPT,BOOTSTRAP AND
+                    REACTs</span> <br> js is fully.</p>
+            <a href="#" class="btn-box">More About Me</a>
+        </div>
+    </section1>
+    <div class="sub-title">
+        <h1>My Skills</h1>
+    </div>
+    <section>
+        <div class="container1" id="skills">
+            <h1 class="heading1">Tachinal Skills</h1>
+            <div class="Techinal-bars">
+                <div class="bar" style="  background-color: rgb(240, 206, 216); border-radius: 10px;"><i
+                        style="color: #c95d2e;" class="fa-brands fa-html5"></i>
+                    <span>HTML 80%</span>
+                    <div class="skills__bar skills__html"></div>
+                </div>
+
+                <div class="bar" style="  background-color: rgb(184, 207, 243); border-radius: 10px;"><i
+                        style="color: #147bbc;" class="fa-brands fa-css3-alt"></i>
+                    <span>CSS 85%</span>
+                    <div class="skills__bar skills__css"></div>
+                </div>
+                <div class="bar" style="  background-color: rgb(236, 239, 201); border-radius: 10px;"><i
+                        style="color: rgb(235, 235, 111);" class="fa-brands fa-js"></i>
+                    <span>JAVA SCRIPT 65%</span>
+                    <div class="skills__bar skills__js"></div>
+                </div>
+                <div class="bar" style="  background-color: rgb(194, 237, 237); border-radius: 10px;"><i
+                        style="color: #039595;" class="fa-brands fa-react "></i>
+                    <span>Reacts js 30%</span>
+                    <div class="skills__bar skills__jsr"></div>
+                </div>
+                <div class="bar" style="  background-color: rgb(138, 191, 252); border-radius: 10px;"><i
+                        style="color: #101ff4;" class="fa-brands fa-bootstrap "></i>
+                    <span>Bootstrap 80%</span>
+                    <div class="skills__bar skills__bt"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container1">
+            <h1 class="heading1">Professionl skills</h1>
+            <div class="radial-bars">
+                <div class="percentage">90%</div>
+                <div class="text">Team work</div>
+                <svg x="0px" y="0px" viewBox="0 0 200 200">
+                    <circle class="progress-bar" cx="80" cy="80" r="60"></circle>
+                    <circle class="path path-1" cx="80" cy="80" r="60"></circle>
+                </svg>
+                <div class="percentage">85%</div>
+                <div class="text">Creativity</div>
+            </div>
+            <div class="radial-bars">
+                <svg x="0px" y="0px" viewBox="0 0 200 200">
+                    <circle class="progress-bar" cx="80" cy="80" r="60"></circle>
+                    <circle class="path path-2" cx="80" cy="80" r="60"></circle>
+                </svg>
+                <div class="percentage">85%</div>
+                <div class="text">communication</div>
+            </div>
+            <div class="radial-bars">
+                <svg x="0px" y="0px" viewBox="0 0 200 200">
+                    <circle class="progress-bar" cx="80" cy="80" r="60"></circle>
+                    <circle class="path path-3" cx="80" cy="80" r="60">communication</circle>
+
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section2 class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span> Me</span></h2>
+            <h4>Let's work Together</h4>
+            <p>Any work for developer</p>
+            <div class="contact-list">
+                <li><i class="fa-regular fa-envelope fa-2xs"></i>pjangid096@gmail.com</li>
+                <li><i class="fa-solid fa-phone fa-2xs"></i>+917727901878</li>
+            </div>
+            <div class="contact-icons">
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter your email" required>
+
+                <input type="" placeholder="Enter your subject">
+                <textarea name="" id="" cols="40" rows="10" placeholder="Enter your massege"></textarea>
+                <input type="submit" value="submit" class="send">
+            </form>
+        </div>
+    </section2>
+    <footer>
+        <div class="ftr">
+            &copy; 2023 Prakash_jangidd. All rights reserved
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+    </script>
+</body>
+
+</html>
